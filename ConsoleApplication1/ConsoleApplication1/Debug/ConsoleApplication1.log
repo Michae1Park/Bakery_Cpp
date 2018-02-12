@@ -1,7 +1,0 @@
-﻿  Bread.cpp
-c:\users\minah lee\documents\visual studio 2017\projects\consoleapplication1\consoleapplication1\bread.cpp(12): error C2011: 'Bread': 'class' 형식 재정의
-  c:\users\minah lee\documents\visual studio 2017\projects\consoleapplication1\consoleapplication1\bread.h(10): note: 'Bread' 선언을 참조하십시오.
-  BakeryInventory.cpp
-c:\users\minah lee\documents\visual studio 2017\projects\consoleapplication1\consoleapplication1\bakeryinventory.cpp(12): error C2011: 'BakeryInventory': 'class' 형식 재정의
-  c:\users\minah lee\documents\visual studio 2017\projects\consoleapplication1\consoleapplication1\bakeryinventory.h(15): note: 'BakeryInventory' 선언을 참조하십시오.
-  코드를 생성하고 있습니다...
