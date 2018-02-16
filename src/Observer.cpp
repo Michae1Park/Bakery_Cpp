@@ -1,9 +1,9 @@
 #include "Observer.h"
 
 Observer::Observer(Inventory *mod) {
-	model = mod;
-	model->attach(this);
+	model_ = mod;
+	model_->attach(this);
 }
 Inventory *Observer:: getInventory() {
-		return model;
-	}
+	return model_;
+}

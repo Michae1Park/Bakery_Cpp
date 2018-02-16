@@ -4,7 +4,7 @@
 class Inventory;	//forward declaration
 
 class Observer {
-	Inventory *model;
+	Inventory *model_;
 public:
 	Observer(Inventory *mod);
 	virtual void update() = 0;
