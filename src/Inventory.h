@@ -13,8 +13,8 @@ class Inventory {
 public:
 	void attach(Observer *observer);
 	void addBread(Bread* bread);
-	void changeStock(Bread* b, int stock);
-	void changePrice(Bread* b, float price);
+	void changeStock(Bread* bread, int stock);
+	void changePrice(Bread* bread, float price);
 	void notify();
 	std::unordered_map<BreadType, Bread*> getBreads();
 };
