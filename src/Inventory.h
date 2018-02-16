@@ -7,8 +7,8 @@
 class Observer;
 
 class Inventory {
-	std::vector<Observer*> obsList; 
-	std::unordered_map<BreadType, Bread*> breads;
+	std::vector<Observer*> obsList_; 
+	std::unordered_map<BreadType, Bread*> breads_;
 
 public:
 	void attach(Observer *obs);

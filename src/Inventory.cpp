@@ -3,15 +3,15 @@
 #include <string>
 
 void Inventory::attach(Observer *obs) {
-	obsList.push_back(obs);
+	obsList_.push_back(obs);
 }
 
 void Inventory::addBread(Bread* b) {
-	if (breads.count(b->getType()) > 0 ) { 
+	if (breads_.count(b->getType()) > 0 ) { 
 		std::cout << b->getLabel() << " already exists in inventory!" << std::endl; 
 	}
 	else {
-		breads.insert(std::make_pair(b->getType(), b));
+		breads_.insert(std::make_pair(b->getType(), b));
 	}
 }
 void Inventory::changeStock(Bread* b, int i) {
@@ -22,7 +22,7 @@ void Inventory::changeStock(Bread* b, int i) {
 		std::cout << "maximum inventory capacity is 500 per one type of bread!" << std::endl;
 	}
 	else {
-		breads[b->getType()]->stock_ = i;
+		breads_[b->getType()]->stock_ = i;
 	}
 }
 void Inventory::changePrice(Bread* b, float f) {
@@ -33,15 +33,15 @@ void Inventory::changePrice(Bread* b, float f) {
 		std::cout << "Come on, no one is going to buy that!" << std::endl;
 	}
 	else {
-		breads[b->getType()]->price_ = f;
+		breads_[b->getType()]->price_ = f;
 	}
 }
 
 void Inventory::notify() {
-	for (int i = 0; i < obsList.size(); i++) //Broad casts to all subscribers
-		obsList[i]->update();
+	for (int i = 0; i < obsList_.size(); i++) //Broad casts to all subscribers
+		obsList_[i]->update();
 }
 
 std::unordered_map<BreadType, Bread*> Inventory::getBreads() {
-	return breads;
+	return breads_;
 }
