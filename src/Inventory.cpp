@@ -2,38 +2,38 @@
 #include <iostream>
 #include <string>
 
-void Inventory::attach(Observer *obs) {
-	obsList_.push_back(obs);
+void Inventory::attach(Observer *observer) {
+	obsList_.push_back(observer);
 }
 
-void Inventory::addBread(Bread* b) {
-	if (breads_.count(b->getType()) > 0 ) { 
-		std::cout << b->getLabel() << " already exists in inventory!" << std::endl; 
+void Inventory::addBread(Bread* bread) {
+	if (breads_.count(bread->getType()) > 0 ) { 
+		std::cout << bread->getLabel() << " already exists in inventory!" << std::endl; 
 	}
 	else {
-		breads_.insert(std::make_pair(b->getType(), b));
+		breads_.insert(std::make_pair(bread->getType(), bread));
 	}
 }
-void Inventory::changeStock(Bread* b, int i) {
-	if (i < 0) {
+void Inventory::changeStock(Bread* bread, int stock) {
+	if (stock < 0) {
 		std::cout << "stock cannot be below 0!" << std::endl;
 	}
-	else if (i > 500) {
+	else if (stock > 500) {
 		std::cout << "maximum inventory capacity is 500 per one type of bread!" << std::endl;
 	}
 	else {
-		breads_[b->getType()]->stock_ = i;
+		breads_[bread->getType()]->stock_ = stock;
 	}
 }
-void Inventory::changePrice(Bread* b, float f) {
-	if (f < 0) {
+void Inventory::changePrice(Bread* bread, float price) {
+	if (price < 0) {
 		std::cout << "price cannot be below 0!" << std::endl;
 	}
-	else if (f > 10000) {
+	else if (price > 10000) {
 		std::cout << "Come on, no one is going to buy that!" << std::endl;
 	}
 	else {
-		breads_[b->getType()]->price_ = f;
+		breads_[bread->getType()]->price_ = price;
 	}
 }
 

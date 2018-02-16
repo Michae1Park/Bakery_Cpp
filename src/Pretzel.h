@@ -4,6 +4,6 @@
 class Pretzel : public Bread {
 public:
 	Pretzel();
-	// ~Pretzel();
+	~Pretzel();
 	void displayBread();
 };

@@ -4,6 +4,6 @@
 class Doughnut : public Bread {
 public:
 	Doughnut();
-	// ~Doughnut();
+	~Doughnut();
 	void displayBread();
 };

@@ -11,10 +11,10 @@ class Inventory {
 	std::unordered_map<BreadType, Bread*> breads_;
 
 public:
-	void attach(Observer *obs);
-	void addBread(Bread* b);
-	void changeStock(Bread* b, int i);
-	void changePrice(Bread* b, float f);
+	void attach(Observer *observer);
+	void addBread(Bread* bread);
+	void changeStock(Bread* b, int stock);
+	void changePrice(Bread* b, float price);
 	void notify();
 	std::unordered_map<BreadType, Bread*> getBreads();
 };
